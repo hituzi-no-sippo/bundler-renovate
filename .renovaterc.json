@@ -1,0 +1,75 @@
+{
+  "extends": [
+    ":ignoreModulesAndTests",
+    "group:monorepos",
+    "group:recommended",
+    "workarounds:all"
+  ],
+  "configMigration": true,
+  "patch": {
+    "automerge": true
+  },
+  "automergeStrategy": "merge-commit",
+  "automergeType": "pr",
+  "platformAutomerge": true,
+  "rangeStrategy": "auto",
+  "semanticCommits": "enabled",
+  "semanticCommitType": "build",
+  "dependencyDashboard": true,
+  "dependencyDashboardApproval": false,
+  "dependencyDashboardAutoclose": true,
+  "dependencyDashboardLabels": [
+    "renovate",
+    "dependencies",
+    "automated"
+  ],
+  "labels": [
+    "renovate",
+    "dependencies",
+    "automated"
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "rubygems"
+      ],
+      "addLabels": [
+        "gem"
+      ],
+      "semanticCommitScope": "gem"
+    },
+    {
+      "matchPackageNames": [
+        "bundler"
+      ],
+      "addLabels": [
+        "bundler"
+      ],
+      "semanticCommitScope": "bundler"
+    },
+    {
+      "matchDatasources": [
+        "ruby-version"
+      ],
+      "addLabels": [
+        "ruby-version"
+      ],
+      "semanticCommitScope": "ruby-version"
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "packageNameTemplate": "bundler",
+      "depNameTemplate": "bundler",
+      "datasourceTemplate": "rubygems",
+      "depTypeTemplate": "development",
+      "fileMatch": [
+        "^Gemfile\\.lock$"
+      ],
+      "matchStrings": [
+        "BUNDLED WITH\\n\\s+(?<currentValue>[\\w+\\.\\-]*)"
+      ]
+    }
+  ]
+}
