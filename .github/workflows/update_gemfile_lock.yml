@@ -21,7 +21,7 @@ permissions: {}
 jobs:
   update-gemfile-lock:
     name: Update Gemfile.lock
-    uses: hituzi-no-sippo/update-gemfile-lock-workflow/.github/workflows/update_gemfile_lock.yml@39721d3fc69502251b80777efc6b8d99095e1cda
+    uses: hituzi-no-sippo/update-gemfile-lock-workflow/.github/workflows/update_gemfile_lock.yml@423b1be5f98a5d63e312ef4ff418759132674879
     with:
       commit_message: "build(gem): update Gemfile.lock"
       timeout_minutes: 5
