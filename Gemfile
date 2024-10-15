@@ -5,5 +5,5 @@ source 'https://rubygems.org'
 ruby file: '.ruby-version'
 
 group :development do
-  gem 'rubocop', '1.56.3'
+  gem 'rubocop', '1.67.0'
 end
