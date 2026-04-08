@@ -64,8 +64,8 @@
       "depNameTemplate": "bundler",
       "datasourceTemplate": "rubygems",
       "depTypeTemplate": "development",
-      "fileMatch": [
-        "^Gemfile\\.lock$"
+      "managerFilePatterns": [
+        "/^Gemfile\\.lock$/"
       ],
       "matchStrings": [
         "BUNDLED WITH\\n\\s+(?<currentValue>[\\w+\\.\\-]*)"
